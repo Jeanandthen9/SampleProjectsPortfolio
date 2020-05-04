@@ -1,15 +1,23 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXbox } from '@fortawesome/free-brands-svg-icons';
+import { faXbox, faSteam } from '@fortawesome/free-brands-svg-icons';
 var ReactBsTable = require('react-bootstrap-table');
 var BootstrapTable = ReactBsTable.BootstrapTable;
 var TableHeaderColumn = ReactBsTable.TableHeaderColumn;
 
-let data: object[] = [{platform: 'Xbox One'}, {platform: 'Steam'}];
+let data: object[] = [{platform: ['XBox']}, {platform: ['Steam']}, {platform: ['Steam', 'XBox']}];
 
-function platformFormatter(cell: object, row: object) {
-    let returnValue = <FontAwesomeIcon icon={faXbox} />;
+function platformFormatter(cell: any, row: any) {
+    let returnValue: any = null;
+
+    if (cell.toUpperCase() == 'XBOX') {
+        returnValue = <FontAwesomeIcon icon={faXbox}/>;
+    }
+    else if (cell.toUpperCase() == 'STEAM') {
+        returnValue = <FontAwesomeIcon icon={faSteam} />;
+    }
+
     return returnValue;
 };
 
