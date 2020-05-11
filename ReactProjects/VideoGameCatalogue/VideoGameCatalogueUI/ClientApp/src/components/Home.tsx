@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXbox, faSteam } from '@fortawesome/free-brands-svg-icons';
 import IconFormatter from './shared/IconFormatter';
 var ReactBsTable = require('react-bootstrap-table');
 var BootstrapTable = ReactBsTable.BootstrapTable;
@@ -31,8 +29,8 @@ const Home = () => (
         <h1>Home</h1>
         <p>Table goes here dummy</p>
         <BootstrapTable data={data} search={true} striped hover>
-            <TableHeaderColumn isKey dataField='id'>ID</TableHeaderColumn>
-            <TableHeaderColumn dataField='name'>Name</TableHeaderColumn>
+            <TableHeaderColumn isKey dataField='id' dataSort sortIndicator={true}>ID</TableHeaderColumn>
+            <TableHeaderColumn dataField='name' dataSort sortIndicator={true}>Name</TableHeaderColumn>
             <TableHeaderColumn dataField='platform' dataFormat={platformsFormatter}>Platform(s)</TableHeaderColumn>
             <TableHeaderColumn dataFormat={actionsFormatter}>Actions</TableHeaderColumn>
         </BootstrapTable>
