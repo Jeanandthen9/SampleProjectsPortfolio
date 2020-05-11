@@ -1,7 +1,7 @@
 ﻿import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXbox, faSteam } from '@fortawesome/free-brands-svg-icons';
-import { faClipboard, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
+import { faClipboard, faPencilAlt, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 function IconsFormatter(props: any) {
     let element: any = null;
@@ -45,6 +45,7 @@ function actionIcons(id: any) {
 
     compList.push(detailsIcon(id));
     compList.push(editIcon(id));
+    compList.push(deleteIcon(id));
 
     return compList;
 };
@@ -55,6 +56,10 @@ function detailsIcon(dataId: any) {
 
 function editIcon(dataId: any) {
     return <FontAwesomeIcon icon={faPencilAlt} className="mr-3" title="Edit"/>;
+}
+
+function deleteIcon(dataId: any) {
+    return <FontAwesomeIcon icon={faTrash} className="mr-3" title="Delete"/>
 }
 
 export default (IconsFormatter);
