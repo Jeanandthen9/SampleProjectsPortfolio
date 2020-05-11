@@ -8,21 +8,20 @@ var BootstrapTable = ReactBsTable.BootstrapTable;
 var TableHeaderColumn = ReactBsTable.TableHeaderColumn;
 
 let data: object[] = [
-    { id: 1, name: 'Game 1', platform: ['XBox'] },
-    { id: 2, name: 'Game 2', platform: ['Steam'] },
-    { id: 3, name: 'Game 3', platform: ['Steam', 'XBox'] },
-    { id: 4, name: 'Game 4', platform: ['XBox', 'Steam'] }
+    { id: 1, name: 'Game 1', platforms: ['XBox'] },
+    { id: 2, name: 'Game 2', platforms: ['Steam'] },
+    { id: 3, name: 'Game 3', platforms: ['Steam', 'XBox'] },
+    { id: 4, name: 'Game 4', platforms: ['XBox', 'Steam'] }
 ];
 
-function platformFormatter(cell: any, row: any) {
-    let returnValue: any = <IconFormatter list={row.platform} type='platform' />;
+function platformsFormatter(cell: any, row: any) {
+    let returnValue: any = <IconFormatter list={row.platforms} type='platform' />;
 
     return returnValue;
 };
 
 function actionsFormatter(cell: any, row: any) {
-    //let returnValue: any = <IconFormatter list={row.platform} type='platform' />;
-    let returnValue: any = <IconFormatter id={row.id} type='actions' />;
+    let returnValue: any = <IconFormatter data={row} type='actions' />;
 
     return returnValue;
 };
@@ -34,7 +33,7 @@ const Home = () => (
         <BootstrapTable data={data} search={true} striped hover>
             <TableHeaderColumn isKey dataField='id'>ID</TableHeaderColumn>
             <TableHeaderColumn dataField='name'>Name</TableHeaderColumn>
-            <TableHeaderColumn dataField='platform' dataFormat={platformFormatter}>Platform(s)</TableHeaderColumn>
+            <TableHeaderColumn dataField='platform' dataFormat={platformsFormatter}>Platform(s)</TableHeaderColumn>
             <TableHeaderColumn dataFormat={actionsFormatter}>Actions</TableHeaderColumn>
         </BootstrapTable>
   </div>

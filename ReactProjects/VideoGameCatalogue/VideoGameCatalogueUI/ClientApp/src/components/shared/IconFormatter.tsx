@@ -12,8 +12,8 @@ function IconsFormatter(props: any) {
     }
 
     else if (props.type.toUpperCase() === 'ACTIONS') {
-        const id = props.id;
-        element = actionIcons(id).map((x: any) => x);
+        const data = props.data;
+        element = actionIcons(data).map((x: any) => x);
     }
 
     return element;
@@ -40,12 +40,12 @@ function platformIcons(platformsList: any) {
     return compList;
 };
 
-function actionIcons(id: any) {
+function actionIcons(data: any) {
     const compList: any = [];
 
-    compList.push(detailsIcon(id));
-    compList.push(editIcon(id));
-    compList.push(deleteIcon(id));
+    compList.push(detailsIcon(data.id));
+    compList.push(editIcon(data.id));
+    compList.push(deleteIcon(data.id));
 
     return compList;
 };
