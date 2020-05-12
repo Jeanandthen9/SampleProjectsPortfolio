@@ -19,7 +19,11 @@ class CatalogueTable extends React.Component<{}, CatalogueState> {
             ],
             realData: []
         };
-    }
+    };
+
+    componentDidMount() {
+        this.getData();
+    };
 
     platformsFormatter(cell: any, row: any) {
         let returnValue: any = <IconFormatter list={row.platforms} type='platform'/>;
@@ -35,18 +39,20 @@ class CatalogueTable extends React.Component<{}, CatalogueState> {
 
     getData() {
         axios.get('Catalogue/GetCatalogue')
-            .then(function(response: any) {
+            .then((response: any) => {
                 console.log(response.data.data);
-                return response.data.data;
-            }).catch(function(error: any) {
+                this.setState({ realData: response.data.data });
+            }).catch((error: any) => {
                 console.log(error);
             });
     };
 
     render() {
+        if (this.state.realData.length == 0) { return null; };
+
         return (
             <div>
-                <BootstrapTable data={this.state.fakeData} search={true} striped hover>
+                <BootstrapTable data={this.state.realData} search={true} striped hover>
                     <TableHeaderColumn isKey dataField='id' dataSort sortIndicator={true}>ID</TableHeaderColumn>
                     <TableHeaderColumn dataField='title' dataSort sortIndicator={true}>Name</TableHeaderColumn>
                     <TableHeaderColumn dataField='platforms' dataFormat={this.platformsFormatter}>Platform(s)</TableHeaderColumn>
