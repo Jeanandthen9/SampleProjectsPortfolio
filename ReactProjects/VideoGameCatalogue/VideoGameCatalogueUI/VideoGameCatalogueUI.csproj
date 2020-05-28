@@ -11,8 +11,6 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,16 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\src\components\CatalogueTable.tsx" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\VideoGameCatalogueData\VideoGameCatalogueData.csproj" />
     <ProjectReference Include="..\VideoGameCatalogueDomain\VideoGameCatalogueDomain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\src\components\CatalogueTable.tsx" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
