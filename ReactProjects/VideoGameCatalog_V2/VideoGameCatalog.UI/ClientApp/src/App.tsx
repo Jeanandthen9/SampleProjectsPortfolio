@@ -6,6 +6,7 @@ import Counter from './components/Counter';
 import FetchData from './components/FetchData';
 
 import './custom.css'
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 
 export default () => (
     <Layout>
