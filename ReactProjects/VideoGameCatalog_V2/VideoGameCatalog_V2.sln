@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoGameCatalog.UI", "VideoGameCatalog.UI\VideoGameCatalog.UI.csproj", "{F58A6434-0DA8-4EC2-BB8C-704E257583A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoGameCatalog.Domain", "VideoGameCatalog.Domain\VideoGameCatalog.Domain.csproj", "{137785BA-1156-49BB-9550-B3114B5858DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoGameCatalog.Data", "VideoGameCatalog.Data\VideoGameCatalog.Data.csproj", "{287A671E-49B7-42CD-874B-BFD1B5631D9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{F58A6434-0DA8-4EC2-BB8C-704E257583A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F58A6434-0DA8-4EC2-BB8C-704E257583A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F58A6434-0DA8-4EC2-BB8C-704E257583A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{137785BA-1156-49BB-9550-B3114B5858DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{137785BA-1156-49BB-9550-B3114B5858DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{137785BA-1156-49BB-9550-B3114B5858DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{137785BA-1156-49BB-9550-B3114B5858DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{287A671E-49B7-42CD-874B-BFD1B5631D9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{287A671E-49B7-42CD-874B-BFD1B5631D9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{287A671E-49B7-42CD-874B-BFD1B5631D9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{287A671E-49B7-42CD-874B-BFD1B5631D9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
