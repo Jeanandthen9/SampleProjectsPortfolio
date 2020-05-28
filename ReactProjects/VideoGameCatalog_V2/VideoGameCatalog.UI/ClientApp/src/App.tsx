@@ -4,6 +4,8 @@ import Layout from './components/Layout';
 import Home from './components/Home';
 import Counter from './components/Counter';
 import FetchData from './components/FetchData';
+import GamesTable from './components/GamesTable';
+import PlatformsTable from './components/PlatformsTable';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -19,5 +21,7 @@ export default () => (
         <Route exact path='/' component={Home} />
         <Route path='/counter' component={Counter} />
         <Route path='/fetch-data/:startDateIndex?' component={FetchData} />
+        <Route path='/Games' component={GamesTable} />
+        <Route path='/Platforms' component={PlatformsTable} />
     </Layout>
 );
