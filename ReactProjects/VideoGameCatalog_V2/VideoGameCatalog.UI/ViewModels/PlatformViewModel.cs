@@ -5,11 +5,9 @@ using System.Threading.Tasks;
 
 namespace VideoGameCatalog.UI.ViewModels
 {
-    public class GameViewModel
+    public class PlatformViewModel
     {
         public int Id { get; set; }
-        public string Title { get; set; }
-        public string ReleaseDate { get; set; }
-        public IEnumerable<PlatformViewModel> Platforms { get; set; }
+        public string Brand { get; set; }
     }
 }

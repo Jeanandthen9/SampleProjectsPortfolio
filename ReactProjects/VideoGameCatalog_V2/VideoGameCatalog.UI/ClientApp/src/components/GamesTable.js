@@ -15,6 +15,8 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var react_redux_1 = require("react-redux");
+var react_moment_1 = require("react-moment");
+var react_loading_1 = require("react-loading");
 var GamesStore = require("../store/Games");
 var react_bootstrap_table_next_1 = require("react-bootstrap-table-next");
 var GamesTable = /** @class */ (function (_super) {
@@ -31,12 +33,31 @@ var GamesTable = /** @class */ (function (_super) {
         this.ensureDataFetched();
     };
     GamesTable.prototype.render = function () {
+        var val;
+        if (this.props.isLoading) {
+            val = React.createElement(react_loading_1.default, { type: "spinningBubbles", color: "#8B008B", height: 667, width: 375 });
+        }
+        else {
+            val = this.renderTable();
+        }
         return (React.createElement(React.Fragment, null,
             React.createElement("h1", null, "Games Table"),
-            this.renderTable()));
+            val));
     };
     GamesTable.prototype.ensureDataFetched = function () {
         this.props.requestGames();
+    };
+    GamesTable.prototype.dateFormatter = function (cell, row) {
+        var returnValue = React.createElement(react_moment_1.default, { format: "MMMM D, YYYY" }, cell);
+        return returnValue;
+    };
+    GamesTable.prototype.platformsFormatter = function (cell, row) {
+        var returnValue = "";
+        return returnValue;
+    };
+    GamesTable.prototype.actionsFormatter = function (cell, row) {
+        var returnValue = "";
+        return returnValue;
     };
     GamesTable.prototype.renderTable = function () {
         var columns = [
@@ -53,13 +74,18 @@ var GamesTable = /** @class */ (function (_super) {
             {
                 dataField: 'releaseDate',
                 text: 'Release Date',
-                sort: true
-                //formatter: dateFormatter
+                sort: true,
+                formatter: this.dateFormatter
+            },
+            {
+                dataField: 'platforms',
+                text: 'Platform(s)',
+                formatter: this.platformsFormatter
             },
             {
                 dataField: 'actions',
-                text: 'Actions'
-                //formatter: actionsFormatter
+                text: 'Actions',
+                formatter: this.actionsFormatter
             }
         ];
         return (React.createElement(react_bootstrap_table_next_1.default, { keyField: 'id', data: this.props.games, columns: columns }));
