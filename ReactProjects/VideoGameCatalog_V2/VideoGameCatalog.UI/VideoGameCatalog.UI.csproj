@@ -21,12 +21,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\components\GamesTable.tsx" />
+    <None Remove="ClientApp\src\components\PlatformsTable.tsx" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\VideoGameCatalog.Data\VideoGameCatalog.Data.csproj" />
     <ProjectReference Include="..\VideoGameCatalog.Domain\VideoGameCatalog.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="ClientApp\src\components\shared\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\components\GamesTable.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\components\PlatformsTable.tsx" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
